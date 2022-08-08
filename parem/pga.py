@@ -16,7 +16,8 @@ class PGA:
 
         # Declare theta optimizer for theta:
         self.theta_opt = torch.optim.RMSprop(model.parameters(),
-                                             lr=h*len(dataset)*lambd)
+                                             lr=h*len(dataset)*lambd,
+                                             alpha=0.1)
 
     def loss(self,
              images,#: TensorType["n_batch", "image_dimensions": ...],

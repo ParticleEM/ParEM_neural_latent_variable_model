@@ -12,8 +12,7 @@ class PGA:
         self.device = device
         
         # Initialize samples:
-        self._particles = model.init_x([len(dataset), n_particles],
-                                       device=self.device)
+        self._particles = model.init_x([len(dataset), n_particles])
 
         # Declare theta optimizer for theta:
         self.theta_opt = torch.optim.RMSprop(model.parameters(),
